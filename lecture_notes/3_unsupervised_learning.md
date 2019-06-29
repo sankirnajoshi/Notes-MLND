@@ -346,15 +346,19 @@ Latten (hidden) variables are cannot be measured directly, but the are somehow d
   - Reduce noise (by throwing away the less important principal components)
   - Make other algorithms (regression, classification) work better for fewer inputs
 
+#### Rule of Thumb for PCA
+
+When evaluating how many components to include in PCA, a good rule of thumb is that the total amount of variance to be captured by the kept components should be atleast 80%
+
 ## Random projection
 
 Random projection is another dimensionality reduction method that is computationally more effective than PCA. While PCA always looks for a hyperplane that maximizes the variance of the projection, random projection simply chooses a random hyperplane and projects the data on it.
 
 This can expresses as a simple matrix multiplication of the form:
 
-The following equation reduces the data from d dimensions to k dimensions.
-
 $X_{kxN}^{RP} = R_{kxd} \cdot X_{dxN}$ where $R$ is some random matrix representing a set of hyperplanes.
+
+The following equation reduces the data from d dimensions to k dimensions.
 
 ### Johnson-Lindenstrauss Lemma
 
@@ -370,10 +374,11 @@ $\epsilon$ ... Accepted level of error. This is a parameter we are allowed to ch
 u,v ... Points in the dataset  
 p(u), p(v) ... Points on the projected hyperplane
 
+Random projection can be made to work by either setting a number of components or by specifying a value for epsilon and having the algorithm calculate a conservative value for the number of dimensions.
 
 ## Independent Component Analysis
 
-ICA takes a mixture of independent sources and tries to isolate these independent sources.
+ICA takes a mixture of independent sources and tries to isolate these independent sources. Classic examples are cocktail party problem/ blind source separation.
 
 It assumes that components are statistically independent and they also must **not** have non-gaussian distribution.
 
