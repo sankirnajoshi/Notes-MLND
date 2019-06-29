@@ -310,12 +310,23 @@ $x_{new} = \frac{x-x_{min}}{x_{max} - x_{min}}$
 PCA is used for dimensionality reduction. It finds a new coordinate by translation and rotation.
 
 - It moves the center of the coordinate system to the center of the data.
-- It moves the x-axis into th_{}e principal axis of variation (the axis where we see most variation)
+- It moves the x-axis into the principal axis of variation (the axis where we see most variation)
 - Further axis become orthogonal axis of variation
 
 Basically, PCA is driven by the assumption that there is a small number of features in our dataset that actually drives the patterns. Out of these feature we then try to form *composite features* that more directly probe the underlying phenomenon.
 
 <img src="images/pca_example.png" width="250px" />
+
+#### Review/Definition of PCA
+
+- Systematized way to transform input features into principal components
+- Use Prinipal components as new features
+- PCs are directions in the data that maximize variance ( i.e. they minimize information loss ) when you project/compress the data down on them.
+- The more the variance of data along a PC, higher that PC is ranked.
+- most variance/ least information lost - First PC
+- second most variance ( without overlapping with first PC ) - Second PC
+- max number of PCs = no of features in the dataset.
+
 
 #### How to find the principal component?
 
