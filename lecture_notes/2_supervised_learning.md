@@ -64,6 +64,11 @@ Therefore, it's common to introduce a parameter $\lambda$ that allows us to infl
 ## Decision Trees
 
 ### Entropy
+
+**Definition**
+
+Entropy is the degree of randomness/disorder or chaos in the system. The higher the disorder, the more is the entropy. In order to extract information from the system, we need to bring down a model's entropy.
+
 **Intuition:** 
 
 - The more rigid/homogeneous the set is, the less entropy it will have.
